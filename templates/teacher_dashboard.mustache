@@ -1,0 +1,30 @@
+<h2>{{#str}}dashboard, mod_blockchain{{/str}}</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{#str}}assignments, mod_blockchain{{/str}}</h5>
+                <p class="card-text">{{#str}}total_assignments, mod_blockchain{{/str}}: {{total_assignments}}</p>
+                <a href="view.php?id={{moduleid}}&action=assignments" class="btn btn-primary">{{#str}}view, mod_blockchain{{/str}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{#str}}submissions, mod_blockchain{{/str}}</h5>
+                <p class="card-text">{{#str}}pending_submissions, mod_blockchain{{/str}}: {{pending_submissions}}</p>
+                <a href="view.php?id={{moduleid}}&action=students" class="btn btn-primary">{{#str}}view, mod_blockchain{{/str}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{#str}}integrity_violations, mod_blockchain{{/str}}</h5>
+                <p class="card-text">{{#str}}violations_detected, mod_blockchain{{/str}}: {{violations_count}}</p>
+                <a href="security.php?id={{moduleid}}" class="btn btn-primary">{{#str}}view, mod_blockchain{{/str}}</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h2>{{#str}}tokens, mod_blockchain{{/str}}</h2>
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">{{#str}}token_balance, mod_blockchain{{/str}}</h5>
+        <p class="card-text" id="token-balance">0</p>
+    </div>
+</div>
+<h3>{{#str}}transaction_history, mod_blockchain{{/str}}</h3>
+<div class="table-responsive">
+    <table class="table table-striped" id="transaction-history-table">
+        <thead>
+        <tr>
+            <th>{{#str}}amount, mod_blockchain{{/str}}</th>
+            <th>{{#str}}reason, mod_blockchain{{/str}}</th>
+            <th>{{#str}}tx_hash, mod_blockchain{{/str}}</th>
+            <th>{{#str}}date, mod_blockchain{{/str}}</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<script>
+    require(['mod_blockchain/tokens'], function(tokens) {
+        tokens.init({{moduleid}}, {{userid}});
+    });
+</script>

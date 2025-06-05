@@ -1,0 +1,18 @@
+<h2>{{#str}}sync_results, mod_blockchain{{/str}}</h2>
+<p>{{#str}}syncblockchain_desc, mod_blockchain{{/str}}</p>
+<div class="alert alert-info">
+    <p>{{#str}}documents_synced, mod_blockchain{{/str}}: {{documents_synced}}</p>
+    <p>{{#str}}tokens_synced, mod_blockchain{{/str}}: {{tokens_synced}}</p>
+    {{#success}}
+        <p>{{#str}}sync_success, mod_blockchain{{/str}}</p>
+    {{/success}}
+    {{#errors}}
+        <h5>{{#str}}errors, mod_blockchain{{/str}}</h5>
+        <ul>
+            {{#errors}}
+                <li>{{.}}</li>
+            {{/errors}}
+        </ul>
+    {{/errors}}
+</div>
+<a href="view.php?id={{moduleid}}" class="btn btn-secondary mt-3">{{#str}}back_to_dashboard, mod_blockchain{{/str}}</a>

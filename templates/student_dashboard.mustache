@@ -1,0 +1,30 @@
+<h2>{{#str}}dashboard, mod_blockchain{{/str}}</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{#str}}assignments, mod_blockchain{{/str}}</h5>
+                <p class="card-text">{{#str}}pending_assignments, mod_blockchain{{/str}}: {{pending_assignments}}</p>
+                <a href="view.php?id={{moduleid}}&action=assignments" class="btn btn-primary">{{#str}}view, mod_blockchain{{/str}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{#str}}tokens, mod_blockchain{{/str}}</h5>
+                <p class="card-text">{{#str}}token_balance, mod_blockchain{{/str}}: {{token_balance}}</p>
+                <a href="view.php?id={{moduleid}}&action=tokens" class="btn btn-primary">{{#str}}view, mod_blockchain{{/str}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{#str}}documents, mod_blockchain{{/str}}</h5>
+                <p class="card-text">{{#str}}total_documents, mod_blockchain{{/str}}: {{total_documents}}</p>
+                <a href="view.php?id={{moduleid}}&action=documents" class="btn btn-primary">{{#str}}view, mod_blockchain{{/str}}</a>
+            </div>
+        </div>
+    </div>
+</div>

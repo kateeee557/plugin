@@ -1,0 +1,32 @@
+<h2>{{#str}}securitycheck, mod_blockchain{{/str}}</h2>
+<p>{{#str}}securitycheck_desc, mod_blockchain{{/str}}</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{#str}}user, mod_blockchain{{/str}}</th>
+            <th>{{#str}}filename, mod_blockchain{{/str}}</th>
+            <th>{{#str}}document_id, mod_blockchain{{/str}}</th>
+            <th>{{#str}}status, mod_blockchain{{/str}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#duplicates}}
+            <tr>
+                <td>{{user}}</td>
+                <td>{{filename}}</td>
+                <td>{{id}}</td>
+                <td>
+                    <span class="badge bg-danger">{{#str}}duplicate_detected, mod_blockchain{{/str}}</span>
+                </td>
+            </tr>
+        {{/duplicates}}
+        {{^duplicates}}
+            <tr>
+                <td colspan="4">{{#str}}no_duplicates, mod_blockchain{{/str}}</td>
+            </tr>
+        {{/duplicates}}
+        </tbody>
+    </table>
+</div>
+<a href="view.php?id={{moduleid}}" class="btn btn-secondary mt-3">{{#str}}back_to_dashboard, mod_blockchain{{/str}}</a>

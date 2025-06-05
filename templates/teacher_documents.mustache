@@ -1,0 +1,48 @@
+<h2>{{#str}}documents, mod_blockchain{{/str}}</h2>
+<div id="document-upload-form">
+    {{{form}}}
+</div>
+<div class="table-responsive mt-4">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{#str}}filename, mod_blockchain{{/str}}</th>
+            <th>{{#str}}user, mod_blockchain{{/str}}</th>
+            <th>{{#str}}document_id, mod_blockchain{{/str}}</th>
+            <th>{{#str}}status, mod_blockchain{{/str}}</th>
+            <th>{{#str}}actions, mod_blockchain{{/str}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#documents}}
+            <tr>
+                <td>{{filename}}</td>
+                <td>{{user}}</td>
+                <td>{{id}}</td>
+                <td>
+                    {{#verified}}
+                        <span class="badge bg-success">{{#str}}verified, mod_blockchain{{/str}}</span>
+                    {{else}}
+                        <span class="badge bg-warning">{{#str}}pending, mod_blockchain{{/str}}</span>
+                    {{/verified}}
+                </td>
+                <td>
+                    <a href="verify_document.php?id={{id}}&moduleid={{moduleid}}" class="btn btn-info btn-sm">
+                    {{#str}}verifydocument, mod_blockchain{{/str}}
+                    </a>
+                </td>
+            </tr>
+        {{/documents}}
+        {{^documents}}
+            <tr>
+                <td colspan="5">{{#str}}nodocuments, mod_blockchain{{/str}}</td>
+            </tr>
+        {{/documents}}
+        </tbody>
+    </table>
+</div>
+<script>
+    require(['mod_blockchain/documents'], function(documents) {
+        documents.init({{moduleid}}, {{userid}});
+    });
+</script>

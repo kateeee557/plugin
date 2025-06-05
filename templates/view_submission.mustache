@@ -1,0 +1,16 @@
+<h2>{{#str}}view_submission, mod_blockchain{{/str}}</h2>
+<div class="card">
+    <div class="card-body">
+        <p>{{#str}}user, mod_blockchain{{/str}}: {{user}}</p>
+        <p>{{#str}}filename, mod_blockchain{{/str}}: {{filename}}</p>
+        <p>{{#str}}grade, mod_blockchain{{/str}}: {{grade}}</p>
+        <p>
+            {{#has_grade}}
+                <a href="verify_grade.php?id={{id}}&moduleid={{moduleid}}" class="btn btn-info btn-sm">
+                {{#str}}verifygrade, mod_blockchain{{/str}}
+                </a>
+            {{/has_grade}}
+        </p>
+    </div>
+</div>
+<a href="view.php?id={{moduleid}}&action=students" class="btn btn-secondary mt-3">{{#str}}back_to_students, mod_blockchain{{/str}}</a>

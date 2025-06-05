@@ -1,0 +1,10 @@
+<h2>{{#str}}grade_submission, mod_blockchain{{/str}}</h2>
+<form action="grade.php" method="post">
+    <input type="hidden" name="submissionid" value="{{submissionid}}">
+    <input type="hidden" name="moduleid" value="{{moduleid}}">
+    <div class="mb-3">
+        <label for="grade" class="form-label">{{#str}}grade, mod_blockchain{{/str}}</label>
+        <input type="number" class="form-control" id="grade" name="grade" min="0" max="100" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{{#str}}submit, mod_blockchain{{/str}}</button>
+</form>

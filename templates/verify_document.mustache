@@ -1,0 +1,17 @@
+<h2>{{#str}}verifydocument, mod_blockchain{{/str}}</h2>
+<p>{{#str}}verifydocument_desc, mod_blockchain{{/str}}</p>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{#str}}document_status, mod_blockchain{{/str}}</h5>
+        <p>{{#str}}filename, mod_blockchain{{/str}}: {{filename}}</p>
+        <p>{{#str}}document_id, mod_blockchain{{/str}}: {{id}}</p>
+        <p>
+            {{#verified}}
+                <span class="badge bg-success">{{#str}}document_verified, mod_blockchain{{/str}}</span>
+            {{else}}
+                <span class="badge bg-warning">{{#str}}document_pending, mod_blockchain{{/str}}</span>
+            {{/verified}}
+        </p>
+    </div>
+</div>
+<a href="view.php?id={{moduleid}}&action=documents" class="btn btn-secondary mt-3">{{#str}}back_to_documents, mod_blockchain{{/str}}</a>

@@ -1,0 +1,17 @@
+<h2>{{#str}}verifygrade, mod_blockchain{{/str}}</h2>
+<p>{{#str}}verifygrade_desc, mod_blockchain{{/str}}</p>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{#str}}grade_status, mod_blockchain{{/str}}</h5>
+        <p>{{#str}}submission_id, mod_blockchain{{/str}}: {{submissionid}}</p>
+        <p>{{#str}}grade, mod_blockchain{{/str}}: {{grade}}</p>
+        <p>
+            {{#verified}}
+                <span class="badge bg-success">{{#str}}grade_verified, mod_blockchain{{/str}}</span>
+            {{else}}
+                <span class="badge bg-warning">{{#str}}grade_pending, mod_blockchain{{/str}}</span>
+            {{/verified}}
+        </p>
+    </div>
+</div>
+<a href="view.php?id={{moduleid}}&action=students" class="btn btn-secondary mt-3">{{#str}}back_to_students, mod_blockchain{{/str}}</a>

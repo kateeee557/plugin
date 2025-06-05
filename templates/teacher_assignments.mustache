@@ -1,0 +1,34 @@
+<h2>{{#str}}assignments, mod_blockchain{{/str}}</h2>
+<h3>{{#str}}create_assignment, mod_blockchain{{/str}}</h3>
+{{{form}}}
+<div class="table-responsive mt-4">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>{{#str}}title, mod_blockchain{{/str}}</th>
+            <th>{{#str}}deadline, mod_blockchain{{/str}}</th>
+            <th>{{#str}}submissions, mod_blockchain{{/str}}</th>
+            <th>{{#str}}actions, mod_blockchain{{/str}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#assignments}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{deadline}}</td>
+                <td>{{submission_count}}</td>
+                <td>
+                    <a href="view.php?id={{moduleid}}&action=edit_assignment&assignmentid={{id}}" class="btn btn-warning btn-sm">
+                    {{#str}}edit, mod_blockchain{{/str}}
+                    </a>
+                </td>
+            </tr>
+        {{/assignments}}
+        {{^assignments}}
+            <tr>
+                <td colspan="4">{{#str}}noassignments, mod_blockchain{{/str}}</td>
+            </tr>
+        {{/assignments}}
+        </tbody>
+    </table>
+</div>
