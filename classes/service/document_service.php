@@ -127,6 +127,30 @@ class document_service {
     }
 
     /**
+     * Retrieve duplicate submissions with user information.
+     *
+     * @return array List of duplicate documents with user names.
+     */
+    public function get_duplicates() {
+        global $DB;
+        $sql = "SELECT d1.id, d1.filename, u.firstname, u.lastname
+                FROM {blockchain_documents} d1
+                JOIN {blockchain_documents} d2 ON d1.file_hash = d2.file_hash AND d1.id < d2.id
+                JOIN {user} u ON d1.userid = u.id
+                WHERE d1.moduleid = ? AND d2.moduleid = ?";
+        $records = $DB->get_records_sql($sql, [$this->moduleid, $this->moduleid]);
+        $duplicates = [];
+        foreach ($records as $r) {
+            $duplicates[] = [
+                'id' => $r->id,
+                'filename' => $r->filename,
+                'user' => $r->firstname . ' ' . $r->lastname,
+            ];
+        }
+        return $duplicates;
+    }
+
+    /**
      * Get a specific document.
      *
      * @param int $documentid The document ID.

@@ -36,7 +36,7 @@ require_login($course, false, $cm);
 require_capability('mod/blockchain:grade', $context);
 
 $service = new mod_blockchain_document_service($moduleid);
-$duplicates = $service->check_duplicates();
+$duplicates = $service->get_duplicates();
 
 $PAGE->set_url('/mod/blockchain/security.php', ['id' => $moduleid]);
 $PAGE->set_title(get_string('securitycheck', 'mod_blockchain'));
